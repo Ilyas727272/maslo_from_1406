@@ -22,6 +22,7 @@ setup(
     entry_points={
         'console_scripts': [
             'first_node = maslo_from_1406.first_node:main',   # ← добавляем эту строку
+            'time_counter = maslo_from_1406.time_counter:main',   # ← добавляем эту строку
         ],
     },
 )
