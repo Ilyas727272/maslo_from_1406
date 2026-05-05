@@ -1,5 +1,8 @@
 from setuptools import setup
-
+#
+import os
+from glob import glob
+#
 package_name = 'maslo_from_1406'
 
 setup(
@@ -10,7 +13,9 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-
+#
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
+       #
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -29,6 +34,8 @@ setup(
             'overflow_listener = maslo_from_1406.overflow_listener:main',
             'task3_even_publisher = maslo_from_1406.task3_even_publisher:main',
             'task3_overflow_listener = maslo_from_1406.task3_overflow_listener:main',
+            'even_number_publisher = maslo_from_1406.even_number_publisher:main',
+            'overflow_listener2 = maslo_from_1406.overflow_listener2:main',
         ],
     },
 )
